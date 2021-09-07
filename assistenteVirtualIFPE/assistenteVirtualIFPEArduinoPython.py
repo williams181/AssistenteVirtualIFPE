@@ -3,7 +3,7 @@ import threading
 import time
 
 conectado = False
-porta = 'COM5' # porta do arduino - linux ou mac em geral -> '/dev/ttyS0'
+porta = 'COM7' # porta do arduino - linux ou mac em geral -> '/dev/ttyS0'
 velocidadeBaud = 115200
 
 mensagensRecebidas = 1;

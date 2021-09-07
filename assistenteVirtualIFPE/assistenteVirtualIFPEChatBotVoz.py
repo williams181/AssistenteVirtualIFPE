@@ -41,7 +41,7 @@ r = sr.Recognizer()
 mic = sr.Microphone(1) # 0 = microfone embutido
 
 conectado = False
-porta = 'COM5' # linux ou mac em geral -> '/dev/ttyS0'
+porta = 'COM7' # linux ou mac em geral -> '/dev/ttyS0'
 velocidadeBaud = 115200
 
 mensagensRecebidas = 1;

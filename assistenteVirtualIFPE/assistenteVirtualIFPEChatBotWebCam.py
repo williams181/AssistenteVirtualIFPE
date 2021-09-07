@@ -2,18 +2,18 @@
 import serial # pip install pyserial
 import threading
 import time
-import os
+import cv2
+import PIL 
+import numpy as np # pip install NumPy
 import speech_recognition as sr # pip install SpeechRecognition
 import pyttsx3 # pip install pyttsx3
-import cv2 # pip install 
-import matplotlib
-import matplotlib.image as mpimg
-import os
-import threading
-import time
-from skimage.io import imread_collection
-import glob
-import PIL as Image
+import cv2 # pip install opencv-python
+import PIL as Image # pip install pillow 
+import chatterbot # pip install chatterbot
+import spacy
+# python -m spacy link en_core_web_sm
+
+
 #chatbot
 from chatterbot.trainers import ListTrainer # pip install chatterbot
 # caso de erro: No module named 'chatterbot_corpus'
@@ -21,72 +21,7 @@ from chatterbot.trainers import ListTrainer # pip install chatterbot
 
 from chatterbot import ChatBot
 
-# BEGIN
-
-# def avatar():
-#     img = cv2.imread("C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\a (1).png")
-#     cv2.imshow('',img)
-#     time.sleep(2)
-#     img = cv2.imread("C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\a (10).png")
-#     cv2.imshow('',img)
-#     time.sleep(2)
-#     img = cv2.imread("C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\a (21).png")
-#     cv2.imshow('',img)
-#     time.sleep(2)
-# threading.Thread(target=avatar).start()
-
-# PATH = "C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\"
-
-# def avatar():
-#     for image in os.listdir(PATH):
-#         if image.endswith(".png"):
-#             img = Image.open(image, "r")
-#             time.sleep(2)
-# teste = threading.Thread(target=avatar)
-
-# teste.start()
-
-# filenames = glob.glob("C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\*.png")
-# filenames.sort()
-# images = [cv2.imread(img) for img in filenames]
-
-# for img in images:
-#     time.sleep(1)
-#     cv2.imshow('',img)
-
-#images = [cv2.imread(file) for file in glob.glob('C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\*.png')]
-
-# # teste com a biblioteca os
-# folder = r"(C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\*.png)"
-
-# folder = "C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\*.png"
-
-# def load_images_from_folder(folder):
-#     images = []
-#     for filename in os.listdir(folder):
-#         img = cv2.imread(os.path.join(folder,filename))
-#         if img is not None:
-#             images.append(img)
-#             cv2.imshow('',img)
-#             time.sleep(2)
-#     return images
-# threading.Thread(target=load_images_from_folder, args=(folder)).start()
-
-# # teste com a biblioteca glob
-
-# cv_img = []
-# for img in glob.glob("C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\*.png"):
-#     n= cv2.imread(img)
-#     cv_img.append(n)
-
-# # teste com a biblioteca skimage
-
-# col_dir = "C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\*.png"
-# col = imread_collection(col_dir)
-
-# END 
-
-AMGbot = ChatBot("assistenteVirtualIFPE")
+AMGbot = ChatBot("a")
 
 # texto inicial, com as conversas o bot vai ficando mais inteligente
 
@@ -100,10 +35,10 @@ treinar.train(conversa)
 
 r = sr.Recognizer()
 
-mic = sr.Microphone(1) # 0 = microfone embutido
+mic = sr.Microphone(0) # 0 = microfone embutido
 
 conectado = False
-porta = 'COM5' # linux ou mac em geral -> '/dev/ttyS0'
+porta = 'COM7' # linux ou mac em geral -> '/dev/ttyS0'
 velocidadeBaud = 115200
 
 mensagensRecebidas = 1;
@@ -155,7 +90,7 @@ def read_from_port(ser):
 def conectaCamera():
     global desligarCameraThread, arduinoFuncionando, SerialArduino,\
         nuncaTeVi, jaTeVi
-    classificador = cv2.CascadeClassifier('C:\\Users\\casa\\Desktop\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
+    classificador = cv2.CascadeClassifier('C:\\Users\\Willi\\OneDrive\\Área de Trabalho\\Python Project\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
     webCam = cv2.VideoCapture(0)
     while(True):
         conectou, imagem = webCam.read()
@@ -299,7 +234,6 @@ if falarVozes:
 
 while(nuncaTeVi): # só conversa depois de ver a pessoa
         pass
-
 
 while (True):
     

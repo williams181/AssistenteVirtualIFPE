@@ -3,10 +3,10 @@ import serial
 
 print("Versão do OpenCV:", cv2.__version__)
 
-classificador = cv2.CascadeClassifier('C:\\Users\\casa\\Desktop\\assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
+classificador = cv2.CascadeClassifier('C:\\Users\\Willi\\OneDrive\\Área de Trabalho\\Python Project\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
 webCam = cv2.VideoCapture(0)
 
-porta = 'COM5' # linux ou mac em geral -> '/dev/ttyS0'
+porta = 'COM7' # linux ou mac em geral -> '/dev/ttyS0'
 velocidadeBaud = 115200
 
 ligarArduino = False

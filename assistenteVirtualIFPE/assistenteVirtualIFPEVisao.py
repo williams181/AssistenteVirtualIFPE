@@ -2,7 +2,7 @@ import cv2 # pip install opencv-python
 
 print("Versão do OpenCV:", cv2.__version__)
 
-webCam = cv2.VideoCapture(1)
+webCam = cv2.VideoCapture(0)
 
 while(True):
     conectou, imagem = webCam.read()
