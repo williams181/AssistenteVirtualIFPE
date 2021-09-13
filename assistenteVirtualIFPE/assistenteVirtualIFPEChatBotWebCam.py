@@ -2,17 +2,18 @@
 import serial # pip install pyserial
 import threading
 import time
-import cv2
-import PIL 
+import PIL # pip install pillow
+import PIL as Image # pip install pillow 
 import numpy as np # pip install NumPy
 import speech_recognition as sr # pip install SpeechRecognition
 import pyttsx3 # pip install pyttsx3
 import cv2 # pip install opencv-python
-import PIL as Image # pip install pillow 
 import chatterbot # pip install chatterbot
-import spacy
-# python -m spacy link en_core_web_sm
-
+import spacy # pip install -U spacy
+# python -m spacy link en_core_web_sm en
+# python -m spacy link en_core_web_md en
+# python -m spacy download en_core_web_sm
+# en-core-web-sm-3.1.0
 
 #chatbot
 from chatterbot.trainers import ListTrainer # pip install chatterbot
@@ -20,6 +21,9 @@ from chatterbot.trainers import ListTrainer # pip install chatterbot
 # python -m pip install chatterbot-corpus
 
 from chatterbot import ChatBot
+
+# nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.blank("en")
 
 AMGbot = ChatBot("a")
 
@@ -90,7 +94,7 @@ def read_from_port(ser):
 def conectaCamera():
     global desligarCameraThread, arduinoFuncionando, SerialArduino,\
         nuncaTeVi, jaTeVi
-    classificador = cv2.CascadeClassifier('C:\\Users\\Willi\\OneDrive\\Área de Trabalho\\Python Project\\AssistenteVirtualIFPE\\assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
+    classificador = cv2.CascadeClassifier('assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
     webCam = cv2.VideoCapture(0)
     while(True):
         conectou, imagem = webCam.read()

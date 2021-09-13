@@ -17,7 +17,8 @@ while(True):
 
     for (origemX, origemY, largura, altura) in encontrarFaces:
         cv2.rectangle(imagem,(origemX,origemY),
-        (origemX + largura, origemY + altura),cor,2)
+            (origemX + largura, origemY + altura),
+            cor,2)
         print("largura", largura, "Altura", altura)
 
         cv2.imshow("Rosto", imagem)
