@@ -1,30 +1,18 @@
 import threading
 import time
 import cv2
+import os
 
-diretorioA = "assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\olho\\avatar_personalizado1.png"
+DirPath = "assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\"
 
-imgA = cv2.imread(diretorioA)
+Files = os.listdir(DirPath)
 
-diretorioB = "assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\boca\\avatar_personalizado1.png"
-
-imgB = cv2.imread(diretorioB)
-
-while True:
-    def threadx():
-        cv2.imshow("img",imgA)
-        time.sleep(1)
-        cv2.imshow("img",imgB)
-        time.sleep(1)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-    t1 = threading.Thread(target=threadx)
-# t2 = threading.Thread(target=threadx)
-# t3 = threading.Thread(target=threadx)
-# t4 = threading.Thread(target=threadx)
-
-# t1.start()
-# t2.start()
-# t3.start()
-    t1.start()
-    print(threading.active_count())
+for File in Files:
+    imgPath = os.path.join(DirPath, File)
+    print(imgPath)
+    image = cv2.imread(imgPath)
+    cv2.imshow("image", image)
+    # time.sleep(1)
+    # cv2.destroyAllWindows()
+    cv2.waitKey(0)
+cv2.destroyAllWindows()
