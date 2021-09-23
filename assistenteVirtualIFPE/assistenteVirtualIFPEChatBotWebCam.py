@@ -188,6 +188,8 @@ def falar():
                 engine.say(resposta)
                 engine.runAndWait()
                 textoFalado = ""
+                img = cv2.imread("assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\b.png")
+                cv2.imshow("img", img)
             
             falarTexto = False
 
