@@ -39,10 +39,18 @@ treinar.train(conversa)
 
 r = sr.Recognizer()
 
+# def avatar():
+#     avatar = cv2.imread("assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\b.png")
+#     cv2.imshow("img", avatar)
+# threading.Thread(target=avatar).start()
+
+# avatar = cv2.imread("assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\avatar-falando.gif.gif")
+# cv2.imshow("avatar",avatar)
+
 mic = sr.Microphone(0) # 0 = microfone embutido
 
 conectado = False
-porta = 'COM5' # linux ou mac em geral -> '/dev/ttyS0'
+porta = 'COM6' # linux ou mac em geral -> '/dev/ttyS0'
 velocidadeBaud = 115200
 
 mensagensRecebidas = 1;
@@ -175,6 +183,8 @@ def falar():
             break
         if jaTeVi:
             engine.say("Olá, bem vindo! em que posso ajuda-lo?")
+            # avatar = cv2.imread("assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\avatar-falando.gif")
+            # cv2.imshow("avatar",avatar)
             engine.runAndWait()
             jaTeVi = False
         if falarTexto:
@@ -188,8 +198,6 @@ def falar():
                 engine.say(resposta)
                 engine.runAndWait()
                 textoFalado = ""
-                img = cv2.imread("assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\b.png")
-                cv2.imshow("img", img)
             
             falarTexto = False
 
