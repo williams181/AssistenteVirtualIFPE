@@ -25,4 +25,4 @@ avatar = pa.PyAvataaar(style=pa.AvatarStyle.TRANSPARENT,
 					clothe_graphic_type=pa.ClotheGraphicType.DIAMOND,)
 
 # rendering the avatar in png format
-avatar.render_png_file('C:\\Users\\casa\\Desktop\\assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\avatar_personalizado1.png')
+avatar.render_png_file('assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\avatar_personalizado1.png')

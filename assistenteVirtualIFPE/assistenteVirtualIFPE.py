@@ -33,7 +33,7 @@ r = sr.Recognizer()
 mic = sr.Microphone()
 
 conectado = False
-porta = 'COM5' # linux ou mac em geral -> '/dev/ttyS0'
+porta = 'COM6' # linux ou mac em geral -> '/dev/ttyS0'
 velocidadeBaud = 115200
 
 mensagensRecebidas = 1;
