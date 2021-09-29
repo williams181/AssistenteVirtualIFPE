@@ -211,8 +211,9 @@ def falar():
             break
         if jaTeVi:
             engine.say("Olá, bem vindo! em que posso ajuda-lo?")
-            # avatar = cv2.imread("assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\avatar-falando.gif")
-            # cv2.imshow("avatar",avatar)
+            from PIL import Image
+            im = Image.open(r"assistenteVirtualIFPE\\assistenteVirtualIFPEAvatarModelo\\b.png")
+            im.show()
             engine.runAndWait()
             jaTeVi = False
         if falarTexto:

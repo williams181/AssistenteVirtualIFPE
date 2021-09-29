@@ -5,10 +5,10 @@ from matplotlib import pyplot as plt
 face_cascade = cv2.CascadeClassifier('assistenteVirtualIFPE\\cascades\\haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('assistenteVirtualIFPE\\cascades\\haarcascade_eye.xml')
 
-img = cv2.imread('assistenteVirtualIFPE\\amigos-juntos.jpg')
+img = cv2.imread('assistenteVirtualIFPE\\amigos-juntos.jpeg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+faces = face_cascade.detectMultiScale(gray, 1.3, 2)
 
 
 for (x,y,w,h) in faces:
