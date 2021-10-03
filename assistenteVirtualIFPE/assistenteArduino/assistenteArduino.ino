@@ -13,7 +13,7 @@ void setup() {
 void loop() {
   // print the string when a newline arrives:
   if (stringComplete) {
-    Serial.print("Assistente Mil Grau Falando: ");
+    Serial.print("Assistente IFPE Falando: ");
     Serial.print(inputString);
     // clear the string:
     if(inputString.startsWith("ligar")){

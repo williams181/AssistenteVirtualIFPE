@@ -19,10 +19,10 @@ void loop() {
     if(inputString.startsWith("ligar")){
       //digitalWrite(pinoLampada, !digitalRead(LED_BUILTIN));// toggle
       digitalWrite(pinoLampada, HIGH);
-      Serial.print("Assistente Mil Grau. Luz ligada.");
+      Serial.print("Assistente IFPEE. Luz ligada.");
     }else if(inputString.startsWith("desligar")){
       digitalWrite(pinoLampada, LOW);
-      Serial.print("Assistente Mil Grau. Luz desligada.");
+      Serial.print("Assistente IFPE. Luz desligada.");
     }
      
     inputString = "";

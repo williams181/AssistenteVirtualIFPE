@@ -105,7 +105,7 @@ while (True):
             if(text == "desativar"):
                 print("Saindo")
                 
-                desativando = "Assistente mil grau desativando."
+                desativando = "Assistente IFPE desativando."
                 
                 engine.say(desativando)
                 engine.runAndWait()
