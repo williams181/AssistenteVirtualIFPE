@@ -100,7 +100,7 @@ jaTeVi = False;
 def avatar():
     if __name__=='__main__':
 
-        cap = cv2.VideoCapture('assistenteVirtualIFPE\\videos chromakey\\35 Female Characters Explainer Video animation green screen1.mp4')  # Captura o arquivo de vídeo
+        cap = cv2.VideoCapture('assistenteVirtualIFPE\\videos chromakey\\Cartoon Character Talking Green Screen 5 minutes.mp4')  # Captura o arquivo de vídeo
         while cap:
 
             fundo = cv2.imread('assistenteVirtualIFPE\\videos chromakey\\ifpe jaboatao.png') # Carrega a imagem para substituição de fundo
@@ -136,7 +136,7 @@ def avatar():
 
             cv2.imshow('final', final )    # Exibe o resultado da imagem misturada
 
-            c = cv2.waitKey(5)    # Aguarda tecla ser pressionada por determinad tempo
+            c = cv2.waitKey(10)    # Aguarda tecla ser pressionada por determinad tempo
             # documentação sobre WaitKey: https://docs.opencv.org/2.4/modules/highgui/doc/user_interface.html?highlight=waitkey
 
             if c == ord('q'):
