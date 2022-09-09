@@ -1,9 +1,5 @@
-# AssistenteVirtualIFPE
+### Hi there 👋
 
-# docker commands 
-
-# docker build -t usuario/projeto . 
-
-# docker run --name ifpe -p 4000:4000 usuario/projeto
-
-# docker start arvore ifpe
+<div id="badges" align="center">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+<div/>
